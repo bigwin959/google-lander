@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Insights & Match Predictions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <!-- Performance Preconnections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ui-avatars.com">
+    <link rel="preconnect" href="https://flagcdn.com">
+
+    <!-- Preload Critical CSS/Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Google Fonts with Swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-200">
+
+    <!-- ============================================== -->
+    <!-- CONFIGURATION SCRIPT - EDIT THIS EVERY DAY     -->
+    <!-- ============================================== -->
+    <script id="config">
+        const PAGE_CONFIG = {
+            // Top Breaking News Banner
+            breakingNews: "🚨 ব্রেকিং: আজকের ম্যাচের স্পেশাল প্রেডিকশন লাইভ হয়েছে! 🚨",
+
+            // Promo & Scarcity Details
+            promoCode: "BPL2026MAX",
+            promoCodeText: "অফারটি শুধুমাত্র আগামী ২ ঘন্টার জন্য।",
+            progressPercentage: 87, // % of VIP spots filled
+
+            // Destination Affiliate Link
+            offerLink: "{VOLUUM_OFFER_LINK}"
+        };
+    </script>
+    <script id="match-database">
+        // Complete list of all upcoming major matches
+        const MATCH_LIST = [
+            { time: "02:30 PM", tournament: "1st ODI", team1: "Bangladesh", team2: "Pakistan", logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png", highlight: true },
+            { time: "07:30 PM", tournament: "WPL 2026", team1: "Mumbai Indians (W)", team2: "UP Warriorz", logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=UPW&background=ffc107&color=000&rounded=true&bold=true" },
+            { time: "08:00 PM", tournament: "PSL Eliminator", team1: "Lahore Qalandars", team2: "Karachi Kings", highlight: true, logo1: "https://ui-avatars.com/api/?name=LQ&background=84c225&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=KK&background=0000FF&color=fff&rounded=true&bold=true" },
+            { time: "08:00 PM", tournament: "WPL 2026", team1: "Royal Challengers (W)", team2: "Delhi Capitals (W)", logo1: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
+            { time: "02:30 PM", tournament: "2nd ODI", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
+            { time: "07:30 PM", tournament: "WPL Final", team1: "Mumbai Indians (W)", team2: "Delhi Capitals (W)", highlight: true, logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
+            { time: "06:00 AM", tournament: "Test Match", team1: "New Zealand", team2: "Australia", logo1: "https://flagcdn.com/w80/nz.png", logo2: "https://flagcdn.com/w80/au.png" },
+            { time: "08:00 PM", tournament: "PSL Qualifier", team1: "Multan Sultans", team2: "Peshawar Zalmi", logo1: "https://ui-avatars.com/api/?name=MS&background=008000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=PZ&background=FFFF00&color=000&rounded=true&bold=true" },
+            { time: "02:30 PM", tournament: "3rd ODI", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
+            { time: "08:00 PM", tournament: "PSL Final", team1: "Multan Sultans", team2: "TBD", highlight: true, logo1: "https://ui-avatars.com/api/?name=MS&background=008000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=TBD&background=808080&color=fff&rounded=true&bold=true" },
+            { time: "02:30 PM", tournament: "Intl ODI", team1: "Sri Lanka", team2: "England", logo1: "https://flagcdn.com/w80/lk.png", logo2: "https://flagcdn.com/w80/gb-eng.png" },
+            { time: "06:00 PM", tournament: "1st T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
+            { time: "08:00 PM", tournament: "IPL Opening", team1: "Chennai Super Kings", team2: "Royal Challengers", highlight: true, logo1: "https://ui-avatars.com/api/?name=CSK&background=FFFF00&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true" },
+            { time: "02:30 PM", tournament: "Intl ODI", team1: "Sri Lanka", team2: "England", logo1: "https://flagcdn.com/w80/lk.png", logo2: "https://flagcdn.com/w80/gb-eng.png" },
+            { time: "08:00 PM", tournament: "IPL", team1: "Mumbai Indians", team2: "Gujarat Titans", logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=GT&background=1b2133&color=fff&rounded=true&bold=true" },
+            { time: "06:00 PM", tournament: "2nd T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
+            { time: "08:00 PM", tournament: "IPL", team1: "Kolkata Knight Riders", team2: "Sunrisers Hyderabad", logo1: "https://ui-avatars.com/api/?name=KKR&background=3a225d&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=SRH&background=FF822A&color=fff&rounded=true&bold=true" },
+            { time: "06:00 PM", tournament: "3rd T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
+            { time: "08:00 PM", tournament: "IPL", team1: "Rajasthan Royals", team2: "Delhi Capitals", logo1: "https://ui-avatars.com/api/?name=RR&background=FFC0CB&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
+            { time: "04:00 PM", tournament: "IPL", team1: "Royal Challengers", team2: "Mumbai Indians", highlight: true, logo1: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true" },
+            { time: "08:00 PM", tournament: "IPL", team1: "Chennai Super Kings", team2: "Kolkata Knight Riders", highlight: true, logo1: "https://ui-avatars.com/api/?name=CSK&background=FFFF00&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=KKR&background=3a225d&color=fff&rounded=true&bold=true" }
+        ];
+    </script>
+    <!-- ============================================== -->
+
+    <div class="app-container relative flex flex-col">
+
+        <!-- 1. The Urgency Hook: Marquee -->
+        <div class="bg-red-600 text-white font-bold text-sm py-2 marquee-container z-10 sticky top-0 shadow-md">
+            <div class="marquee-content" id="breakingNewsDisplay">
+                Loading news...
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="bg-slate-900 text-white p-4 text-center">
+            <h1 class="text-2xl font-extrabold uppercase tracking-wide">Elite Sports Insights</h1>
+            <p class="text-slate-400 text-xs mt-1">Real-time Data • VIP Predictions</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 pb-20 flex flex-col">
+
+            <!-- 2. Dynamic Match of the Day Widget -->
+            <section class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden mb-6 order-2">
+                <div class="bg-slate-800 text-white px-4 py-2 flex justify-between items-center">
+                    <span class="text-sm font-semibold uppercase tracking-wider">Match of the Day</span>
+                    <span class="text-xs flex items-center text-green-400 font-bold">
+                        <span class="h-2 w-2 rounded-full bg-green-500 mr-2 blinking-dot"></span>
+                        Live Data Active
+                    </span>
+                </div>
+                <div class="p-5 text-center">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex flex-col items-center">
+                            <img id="team1Logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+                                width="56" height="56" alt="Team 1"
+                                class="w-14 h-14 rounded-full mb-2 shadow-sm object-cover bg-slate-100">
+                            <span id="team1Name" class="font-bold text-slate-800 loading-skeleton mt-2">Team 1</span>
+                        </div>
+                        <div class="text-2xl font-black text-slate-300 mx-2">VS</div>
+                        <div class="flex flex-col items-center">
+                            <img id="team2Logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+                                width="56" height="56" alt="Team 2"
+                                class="w-14 h-14 rounded-full mb-2 shadow-sm object-cover bg-slate-100">
+                            <span id="team2Name" class="font-bold text-slate-800 loading-skeleton mt-2">Team 2</span>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 rounded-lg p-3 border border-indigo-100 mt-2">
+                        <p class="text-sm text-indigo-800 font-medium" id="matchOdds">
+                            Loading prediction...
+                        </p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-3 font-semibold text-center">
+                        <i class="fa-solid fa-robot text-indigo-500 mr-1"></i> Our AI prediction for today's match is
+                        ready.
+                    </p>
+                </div>
+            </section>
+
+            <!-- (Hidden Top Matches moved to internal Logic) -->
+
+            <!-- 3. Core Conversion Area (BIGWIN959 Highlight) -->
+            <section
+                class="bg-white rounded-xl shadow-lg border border-slate-100 p-5 mb-6 text-center transform transition duration-500 hover:scale-[1.02] order-1">
+                <h2 class="text-xl font-extrabold text-slate-900 mb-2 leading-tight">
+                    Why 50,000+ BD Fans Are Using <span class="text-amber-500">BIGWIN959</span> Today
+                </h2>
+
+                <!-- Trust Anchors -->
+                <div class="flex justify-center items-center gap-3 my-4">
+                    <div class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded border border-pink-200">
+                        bKash</div>
+                    <div
+                        class="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded border border-orange-200">
+                        Nagad</div>
+                    <div
+                        class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded border border-purple-200">
+                        Rocket</div>
+                </div>
+                <p class="text-sm font-bold text-green-600 mb-5 flex justify-center items-center">
+                    <i class="fa-solid fa-bolt mr-2"></i> bKash বা Nagad-এ ৩ মিনিটে টাকা পান
+                </p>
+
+                <!-- Scarcity Inducer -->
+                <div class="mb-5 text-left bg-rose-50 p-3 rounded-lg border border-rose-100">
+                    <div class="flex justify-between text-xs font-bold mb-1 text-rose-700">
+                        <span>VIP Access Spots</span>
+                        <span id="progressText">87% Full</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-rose-500 h-2 rounded-full" id="progressBar"></div>
+                    </div>
+                    <p class="text-[10px] text-rose-500 mt-2 text-center font-medium">Almost at capacity for today!</p>
+                </div>
+
+                <!-- Promo Code Box -->
+                <div class="bg-yellow-100 border-2 border-dashed border-yellow-400 p-3 rounded-lg mb-5 relative">
+                    <span
+                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Exclusive
+                        Reward</span>
+                    <p class="text-sm text-slate-700 font-medium mb-1 mt-1">Use Code at Registration:</p>
+                    <div class="text-2xl font-black tracking-widest text-slate-900" id="promoCodeDisplay">CODE</div>
+                    <p class="text-[11px] text-red-600 font-bold mt-1 animate-pulse" id="promoCodeTextDisplay"><i
+                            class="fa-regular fa-clock mr-1"></i> Valid only for the next 2 hours!</p>
+                </div>
+
+                <!-- Main CTA -->
+                <a id="ctaLink" href="#"
+                    class="block w-full bg-green-500 hover:bg-green-600 text-white font-black text-lg py-4 rounded-xl shadow-lg pulse-btn transition-colors duration-300">
+                    কোড কপি করুন এবং ভিআইপি এক্সেস নিন <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </section>
+
+            <!-- 4. Real-time Social Proof -->
+            <section class="bg-white rounded-xl shadow-lg border border-slate-100 p-4 mb-4 order-3">
+                <h3 class="text-sm font-bold text-slate-800 mb-4 border-b pb-2">Recent VIP Activity</h3>
+                <div class="h-24 overflow-hidden relative" id="reviewsContainer">
+                    <!-- Reviews injected by JS -->
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 5. Footer (Compliance) -->
+        <footer class="bg-slate-900 text-slate-400 text-center py-6 px-4 mt-auto">
+            <p class="text-xs mb-3">
+                This site provides sports insights, analysis, and match predictions. It is not a gambling platform.
+                Please ensure compliance with your local regulations.
+            </p>
+            <div class="flex justify-center gap-4 text-xs">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Disclaimer</a>
+            </div>
+            <p class="text-[10px] mt-4 opacity-50">&copy; 2026 SportsInsights Network. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- RENDER SCRIPT -->
+    <script src="app.js" defer></script>
+</body>
+
+</html>
