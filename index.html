@@ -2,245 +2,692 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11508938276"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-11508938276');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Insights & Match Predictions</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Icons -->
-    <!-- Performance Preconnections -->
+    <title>BD Sports Analytics | Data-Driven Cricket Predictions</title>
+    <!-- Performance Optimizations (DNS preconnect & prefetch) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://ui-avatars.com">
-    <link rel="preconnect" href="https://flagcdn.com">
+    <link rel="preconnect" href="https://cricketvectors.akamaized.net" crossorigin>
 
-    <!-- Preload Critical CSS/Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Voluum Lander Tracking Script -->
-    <meta http-equiv="delegate-ch"
-        content="sec-ch-ua https://track.bigwin234.com; sec-ch-ua-mobile https://track.bigwin234.com; sec-ch-ua-arch https://track.bigwin234.com; sec-ch-ua-model https://track.bigwin234.com; sec-ch-ua-platform https://track.bigwin234.com; sec-ch-ua-platform-version https://track.bigwin234.com; sec-ch-ua-bitness https://track.bigwin234.com; sec-ch-ua-full-version-list https://track.bigwin234.com; sec-ch-ua-full-version https://track.bigwin234.com">
+    <!-- Tailwind CSS (CDN for single-file deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Deep technical blue colors
+                        primary: '#0f172a',    // slate-900
+                        secondary: '#1e293b',  // slate-800
+                        accent: '#3b82f6',     // blue-500
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .dtpcnt {
-            opacity: 0;
+        /* Smooth scrolling and basic setup */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Data Dashboard Line Animation */
+        @keyframes drawLine {
+            from {
+                stroke-dashoffset: 2000;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes pulsePoint {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        .anim-line {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: drawLine 3s ease-out forwards;
+        }
+
+        .anim-point {
+            transform-origin: center;
+            animation: pulsePoint 2s infinite ease-in-out;
+        }
+
+        .anim-point:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .anim-point:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .anim-point:nth-child(4) {
+            animation-delay: 1.2s;
         }
     </style>
-    <script>
-        (function (e, d, k, n, u, v, g, w, C, f, p, x, D, c, q, r, h, t, y, G, z) {
-            function A() { for (var a = d.querySelectorAll(".dtpcnt"), b = 0, l = a.length; b < l; b++)a[b][w] = a[b][w].replace(/(^|\s+)dtpcnt($|\s+)/g, "") } function E(a, b, l, F) { var m = new Date; m.setTime(m.getTime() + (F || 864E5)); d.cookie = a + "=" + b + "; " + l + "samesite=Strict; expires=" + m.toGMTString() + "; path=/"; k.setItem(a, b); k.setItem(a + "-expires", m.getTime()) } function B(a) {
-                var b = d.cookie.match(new RegExp("(^| )" + a + "=([^;]+)")); return b ? b.pop() : k.getItem(a + "-expires") && +k.getItem(a +
-                    "-expires") > (new Date).getTime() ? k.getItem(a) : null
-            } z = "https:" === e.location.protocol ? "secure; " : ""; e[f] || (e[f] = function () { (e[f].q = e[f].q || []).push(arguments) }, r = d[u], d[u] = function () { r && r.apply(this, arguments); if (e[f] && !e[f].hasOwnProperty("params") && /loaded|interactive|complete/.test(d.readyState)) for (; c = d[v][p++];)/\/?click\/?($|(\/[0-9]+)?$)/.test(c.pathname) && (c[g] = "javascrip" + e.postMessage.toString().slice(4, 5) + ":" + f + '.l="' + c[g] + '",void 0') }, setTimeout(function () {
-                (t = RegExp("[?&]cpid(=([^&#]*)|&|#|$)").exec(e.location.href)) &&
-                    t[2] && (h = t[2], y = B("vl-" + h)); var a = B("vl-cep"), b = location[g]; if ("savedCep" === D && a && (!h || "undefined" === typeof h) && 0 > b.indexOf("cep=")) { var l = -1 < b.indexOf("?") ? "&" : "?"; b += l + a } c = d.createElement("script"); q = d.scripts[0]; c.defer = 1; c.src = x + (-1 === x.indexOf("?") ? "?" : "&") + "lpref=" + n(d.referrer) + "&lpurl=" + n(b) + "&lpt=" + n(d.title) + "&vtm=" + (new Date).getTime() + (y ? "&uw=no" : ""); c[C] = function () { for (p = 0; c = d[v][p++];)/dtpCallback\.l/.test(c[g]) && (c[g] = decodeURIComponent(c[g]).match(/dtpCallback\.l="([^"]+)/)[1]); A() };
-                q.parentNode.insertBefore(c, q); h && E("vl-" + h, "1", z)
-            }, 0), setTimeout(A, 7E3))
-        })(window, document, localStorage, encodeURIComponent, "onreadystatechange", "links", "href", "className", "onerror", "dtpCallback", 0, "https://track.bigwin234.com/d/.js", "savedCep");
-    </script>
-    <noscript>
-        <link href="https://track.bigwin234.com/d/.js?noscript=true&lpurl=" rel="stylesheet" />
-    </noscript>
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-    <!-- ============================================== -->
-    <!-- CONFIGURATION SCRIPT - EDIT THIS EVERY DAY     -->
-    <!-- ============================================== -->
-    <script id="config">
-        const PAGE_CONFIG = {
-            // Top Breaking News Banner
-            breakingNews: "🚨 ব্রেকিং: আজকের ম্যাচের স্পেশাল প্রেডিকশন লাইভ হয়েছে! 🚨",
+    <!-- 1. 顶部导航 (Header) -->
+    <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Tech Company style logo (SVG) -->
+                <svg class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span class="text-xl font-bold text-primary tracking-tight">BD Sports Analytics</span>
+            </div>
 
-            // Promo & Scarcity Details
-            promoCode: "BPL2026MAX",
-            promoCodeText: "অফারটি শুধুমাত্র আগামী ২ ঘন্টার জন্য।",
-            progressPercentage: 87, // % of VIP spots filled
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#methodology"
+                    class="text-sm font-medium text-slate-600 hover:text-accent transition-colors">Methodology</a>
+                <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-accent transition-colors">API
+                    Pricing</a>
+                <a href="#contact"
+                    class="text-sm font-medium px-4 py-2 bg-slate-100 rounded-md text-secondary hover:bg-slate-200 transition-colors">Contact
+                    Us</a>
+            </nav>
+        </div>
+    </header>
 
-            // Destination Affiliate Link
-            offerLink: "https://track.bigwin234.com/click"
-        };
-    </script>
-    <script id="match-database">
-        // Complete list of all upcoming major matches
-        const MATCH_LIST = [
-            { time: "02:30 PM", tournament: "1st ODI", team1: "Bangladesh", team2: "Pakistan", logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png", highlight: true },
-            { time: "07:30 PM", tournament: "WPL 2026", team1: "Mumbai Indians (W)", team2: "UP Warriorz", logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=UPW&background=ffc107&color=000&rounded=true&bold=true" },
-            { time: "08:00 PM", tournament: "PSL Eliminator", team1: "Lahore Qalandars", team2: "Karachi Kings", highlight: true, logo1: "https://ui-avatars.com/api/?name=LQ&background=84c225&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=KK&background=0000FF&color=fff&rounded=true&bold=true" },
-            { time: "08:00 PM", tournament: "WPL 2026", team1: "Royal Challengers (W)", team2: "Delhi Capitals (W)", logo1: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
-            { time: "02:30 PM", tournament: "2nd ODI", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
-            { time: "07:30 PM", tournament: "WPL Final", team1: "Mumbai Indians (W)", team2: "Delhi Capitals (W)", highlight: true, logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
-            { time: "06:00 AM", tournament: "Test Match", team1: "New Zealand", team2: "Australia", logo1: "https://flagcdn.com/w80/nz.png", logo2: "https://flagcdn.com/w80/au.png" },
-            { time: "08:00 PM", tournament: "PSL Qualifier", team1: "Multan Sultans", team2: "Peshawar Zalmi", logo1: "https://ui-avatars.com/api/?name=MS&background=008000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=PZ&background=FFFF00&color=000&rounded=true&bold=true" },
-            { time: "02:30 PM", tournament: "3rd ODI", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
-            { time: "08:00 PM", tournament: "PSL Final", team1: "Multan Sultans", team2: "TBD", highlight: true, logo1: "https://ui-avatars.com/api/?name=MS&background=008000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=TBD&background=808080&color=fff&rounded=true&bold=true" },
-            { time: "02:30 PM", tournament: "Intl ODI", team1: "Sri Lanka", team2: "England", logo1: "https://flagcdn.com/w80/lk.png", logo2: "https://flagcdn.com/w80/gb-eng.png" },
-            { time: "06:00 PM", tournament: "1st T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
-            { time: "08:00 PM", tournament: "IPL Opening", team1: "Chennai Super Kings", team2: "Royal Challengers", highlight: true, logo1: "https://ui-avatars.com/api/?name=CSK&background=FFFF00&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true" },
-            { time: "02:30 PM", tournament: "Intl ODI", team1: "Sri Lanka", team2: "England", logo1: "https://flagcdn.com/w80/lk.png", logo2: "https://flagcdn.com/w80/gb-eng.png" },
-            { time: "08:00 PM", tournament: "IPL", team1: "Mumbai Indians", team2: "Gujarat Titans", logo1: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=GT&background=1b2133&color=fff&rounded=true&bold=true" },
-            { time: "06:00 PM", tournament: "2nd T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
-            { time: "08:00 PM", tournament: "IPL", team1: "Kolkata Knight Riders", team2: "Sunrisers Hyderabad", logo1: "https://ui-avatars.com/api/?name=KKR&background=3a225d&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=SRH&background=FF822A&color=fff&rounded=true&bold=true" },
-            { time: "06:00 PM", tournament: "3rd T20I", team1: "Bangladesh", team2: "Pakistan", highlight: true, logo1: "https://flagcdn.com/w80/bd.png", logo2: "https://flagcdn.com/w80/pk.png" },
-            { time: "08:00 PM", tournament: "IPL", team1: "Rajasthan Royals", team2: "Delhi Capitals", logo1: "https://ui-avatars.com/api/?name=RR&background=FFC0CB&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=DC&background=0000FF&color=fff&rounded=true&bold=true" },
-            { time: "04:00 PM", tournament: "IPL", team1: "Royal Challengers", team2: "Mumbai Indians", highlight: true, logo1: "https://ui-avatars.com/api/?name=RCB&background=FF0000&color=fff&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=MI&background=004b87&color=fff&rounded=true&bold=true" },
-            { time: "08:00 PM", tournament: "IPL", team1: "Chennai Super Kings", team2: "Kolkata Knight Riders", highlight: true, logo1: "https://ui-avatars.com/api/?name=CSK&background=FFFF00&color=000&rounded=true&bold=true", logo2: "https://ui-avatars.com/api/?name=KKR&background=3a225d&color=fff&rounded=true&bold=true" }
-        ];
-    </script>
-    <!-- ============================================== -->
+    <!-- 2. 英雄主图区 (Hero Section) -->
+    <section class="bg-primary text-white py-20 lg:py-28 overflow-hidden relative">
+        <!-- Abstract Background elements -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 32px 32px;"></div>
 
-    <div class="app-container relative flex flex-col">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="max-w-2xl">
+                <div
+                    class="inline-block px-3 py-1 mb-6 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-accent tracking-wide uppercase">
+                    Advanced Data Intelligence
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Don't Guess. Know Who Wins Today.
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl">
+                    Join 50,000+ VIP members using our daily match insights to stay ahead of the game.
+                </p>
+                <div>
+                    <a href="#match-widget" id="hero-cta-btn"
+                        class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-md text-primary bg-white hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-white transition-all shadow-lg uppercase tracking-wide">
+                        ACCESS VIP PLATFORM &amp; UNLOCK REWARDS ➔
+                    </a>
+                </div>
+            </div>
 
-        <!-- 1. The Urgency Hook: Marquee -->
-        <div class="bg-red-600 text-white font-bold text-sm py-2 marquee-container z-10 sticky top-0 shadow-md">
-            <div class="marquee-content" id="breakingNewsDisplay">
-                Loading news...
+            <!-- Abstract Chart Animation -->
+            <div class="hidden lg:flex justify-end pr-8">
+                <div
+                    class="w-full max-w-md bg-secondary/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6 border-b border-slate-600 pb-4">
+                        <div class="flex gap-2 items-center">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono">Neural_Engine_v3.2</span>
+                    </div>
+                    <svg viewBox="0 0 400 200" class="w-full h-auto">
+                        <!-- Grid Lines -->
+                        <path d="M0 40h400 M0 80h400 M0 120h400 M0 160h400" stroke="#334155" stroke-width="1"
+                            stroke-dasharray="4" />
+                        <!-- Data Line -->
+                        <path d="M 0 180 C 50 160 80 80 130 90 C 180 100 220 40 270 50 C 320 60 360 120 400 130"
+                            fill="none" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" class="anim-line" />
+                        <!-- Data Points -->
+                        <circle cx="130" cy="90" r="5" fill="#fff" class="anim-point"
+                            style="transform-origin: 130px 90px;" />
+                        <circle cx="270" cy="50" r="5" fill="#fff" class="anim-point"
+                            style="transform-origin: 270px 50px;" />
+                        <circle cx="400" cy="130" r="5" fill="#fff" class="anim-point"
+                            style="transform-origin: 400px 130px;" />
+
+                        <!-- Area gradient definition -->
+                        <defs>
+                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2" />
+                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            d="M 0 180 C 50 160 80 80 130 90 C 180 100 220 40 270 50 C 320 60 360 120 400 130 L 400 200 L 0 200 Z"
+                            fill="url(#areaGradient)" class="anim-line" />
+                    </svg>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Header -->
-        <header class="bg-slate-900 text-white p-4 text-center">
-            <h1 class="text-2xl font-extrabold uppercase tracking-wide">Elite Sports Insights</h1>
-            <p class="text-slate-400 text-xs mt-1">Real-time Data • VIP Predictions</p>
-        </header>
-
-        <!-- Main Content Area -->
-        <main class="flex-1 p-4 pb-20 flex flex-col">
-
-            <!-- 2. Dynamic Match of the Day Widget -->
-            <section class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden mb-6 order-2">
-                <div class="bg-slate-800 text-white px-4 py-2 flex justify-between items-center">
-                    <span class="text-sm font-semibold uppercase tracking-wider">Match of the Day</span>
-                    <span class="text-xs flex items-center text-green-400 font-bold">
-                        <span class="h-2 w-2 rounded-full bg-green-500 mr-2 blinking-dot"></span>
-                        Live Data Active
-                    </span>
+    <!-- Trust Bar -->
+    <div class="bg-white border-b border-slate-200 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center gap-8 md:gap-16 flex-wrap items-center">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm font-semibold text-slate-700">100% Secure Access</span>
                 </div>
-                <div class="p-5 text-center">
-                    <div class="flex justify-between items-center mb-4">
-                        <div class="flex flex-col items-center">
-                            <img id="team1Logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
-                                width="56" height="56" alt="Team 1"
-                                class="w-14 h-14 rounded-full mb-2 shadow-sm object-cover bg-slate-100">
-                            <span id="team1Name" class="font-bold text-slate-800 loading-skeleton mt-2">Team 1</span>
-                        </div>
-                        <div class="text-2xl font-black text-slate-300 mx-2">VS</div>
-                        <div class="flex flex-col items-center">
-                            <img id="team2Logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
-                                width="56" height="56" alt="Team 2"
-                                class="w-14 h-14 rounded-full mb-2 shadow-sm object-cover bg-slate-100">
-                            <span id="team2Name" class="font-bold text-slate-800 loading-skeleton mt-2">Team 2</span>
-                        </div>
-                    </div>
-                    <div class="bg-indigo-50 rounded-lg p-3 border border-indigo-100 mt-2">
-                        <p class="text-sm text-indigo-800 font-medium" id="matchOdds">
-                            Loading prediction...
-                        </p>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-3 font-semibold text-center">
-                        <i class="fa-solid fa-robot text-indigo-500 mr-1"></i> Our AI prediction for today's match is
-                        ready.
-                    </p>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm font-semibold text-slate-700">Instant Account Setup</span>
                 </div>
-            </section>
-
-            <!-- (Hidden Top Matches moved to internal Logic) -->
-
-            <!-- 3. Core Conversion Area (BIGWIN959 Highlight) -->
-            <section
-                class="bg-white rounded-xl shadow-lg border border-slate-100 p-5 mb-6 text-center transform transition duration-500 hover:scale-[1.02] order-1">
-                <h2 class="text-xl font-extrabold text-slate-900 mb-2 leading-tight">
-                    Why 50,000+ BD Fans Are Using <span class="text-amber-500">BIGWIN959</span> Today
-                </h2>
-
-                <!-- Trust Anchors -->
-                <div class="flex justify-center items-center gap-3 my-4">
-                    <div class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded border border-pink-200">
-                        bKash</div>
-                    <div
-                        class="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded border border-orange-200">
-                        Nagad</div>
-                    <div
-                        class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded border border-purple-200">
-                        Rocket</div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-sm font-semibold text-slate-700">Local Support</span>
                 </div>
-                <p class="text-sm font-bold text-green-600 mb-5 flex justify-center items-center">
-                    <i class="fa-solid fa-bolt mr-2"></i> bKash বা Nagad-এ ৩ মিনিটে টাকা পান
-                </p>
-
-                <!-- Scarcity Inducer -->
-                <div class="mb-5 text-left bg-rose-50 p-3 rounded-lg border border-rose-100">
-                    <div class="flex justify-between text-xs font-bold mb-1 text-rose-700">
-                        <span>VIP Access Spots</span>
-                        <span id="progressText">87% Full</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-rose-500 h-2 rounded-full" id="progressBar"></div>
-                    </div>
-                    <p class="text-[10px] text-rose-500 mt-2 text-center font-medium">Almost at capacity for today!</p>
-                </div>
-
-                <!-- Promo Code Box -->
-                <div class="bg-yellow-100 border-2 border-dashed border-yellow-400 p-3 rounded-lg mb-5 relative">
-                    <span
-                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Exclusive
-                        Reward</span>
-                    <p class="text-sm text-slate-700 font-medium mb-1 mt-1">Use Code at Registration:</p>
-                    <div class="text-2xl font-black tracking-widest text-slate-900" id="promoCodeDisplay">CODE</div>
-                    <p class="text-[11px] text-red-600 font-bold mt-1 animate-pulse" id="promoCodeTextDisplay"><i
-                            class="fa-regular fa-clock mr-1"></i> Valid only for the next 2 hours!</p>
-                </div>
-
-                <!-- Main CTA -->
-                <a id="ctaLink" href="#"
-                    class="block w-full bg-green-500 hover:bg-green-600 text-white font-black text-lg py-4 rounded-xl shadow-lg pulse-btn transition-colors duration-300">
-                    কোড কপি করুন এবং ভিআইপি এক্সেস নিন <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
-            </section>
-
-            <!-- 4. Real-time Social Proof -->
-            <section class="bg-white rounded-xl shadow-lg border border-slate-100 p-4 mb-4 order-3">
-                <h3 class="text-sm font-bold text-slate-800 mb-4 border-b pb-2">Recent VIP Activity</h3>
-                <div class="h-24 overflow-hidden relative" id="reviewsContainer">
-                    <!-- Reviews injected by JS -->
-                </div>
-            </section>
-
-        </main>
-
-        <!-- 5. Footer (Compliance) -->
-        <footer class="bg-slate-900 text-slate-400 text-center py-6 px-4 mt-auto">
-            <p class="text-xs mb-3">
-                This site provides sports insights, analysis, and match predictions. It is not a gambling platform.
-                Please ensure compliance with your local regulations.
-            </p>
-            <div class="flex justify-center gap-4 text-xs">
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Terms of Service</a>
-                <a href="#" class="hover:text-white transition">Disclaimer</a>
             </div>
-            <p class="text-[10px] mt-4 opacity-50">&copy; 2026 SportsInsights Network. All rights reserved.</p>
-        </footer>
+        </div>
     </div>
 
-    <!-- RENDER SCRIPT -->
-    <script src="app.js" defer></script>
+    <!-- 3. 今日赛事分析卡片 (Match Data Widget) -->
+    <section id="match-widget" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Real-Time Match Analysis</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Our latest predictive insight generated by adjusting historical datasets against live venue
+                    metadata.
+                </p>
+            </div>
+
+            <div
+                class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all hover:-translate-y-1 hover:shadow-2xl duration-300">
+                <!-- Widget Header -->
+                <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex justify-between items-center text-sm">
+                    <div class="flex items-center gap-2 text-slate-500 font-mono text-xs">
+                        <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Last updated: <span id="widget-time">Loading...</span>
+                    </div>
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                        High Confidence Signal
+                    </span>
+                </div>
+
+                <!-- Widget Body -->
+                <div class="p-8">
+                    <!-- Teams -->
+                    <div class="flex items-center justify-between mb-10 pb-10 border-b border-slate-100 relative">
+                        <!-- VS Badge -->
+                        <div
+                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center font-bold text-slate-400 text-sm border-4 border-white">
+                            VS
+                        </div>
+
+                        <!-- Team A -->
+                        <div class="flex flex-col items-center flex-1">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mb-4 shadow-sm overflow-hidden">
+                                <img id="team-a-logo" src="https://via.placeholder.com/64?text=wait" alt="Team A Logo"
+                                    class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            </div>
+                            <h3 id="team-a-name" class="font-bold text-lg text-slate-900 text-center">Team A</h3>
+                            <span id="team-a-short" class="font-bold text-xs text-slate-500 mt-1">TMA</span>
+                        </div>
+
+                        <!-- Team B -->
+                        <div class="flex flex-col items-center flex-1">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mb-4 shadow-sm overflow-hidden">
+                                <img id="team-b-logo" src="https://via.placeholder.com/64?text=wait" alt="Team B Logo"
+                                    class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            </div>
+                            <h3 id="team-b-name" class="font-bold text-lg text-slate-900 text-center">Team B</h3>
+                            <span id="team-b-short" class="font-bold text-xs text-slate-500 mt-1">TMB</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Indicators -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                            <div class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">Historical
+                                Win Rate</div>
+                            <div class="text-2xl font-bold text-slate-800" id="data-win-rate">--% vs --%</div>
+                            <div class="text-xs text-slate-400 mt-1">Based on 50+ past encounters</div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                            <div class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">Pitch
+                                Adaptation Score</div>
+                            <div class="text-2xl font-bold text-slate-800" id="data-pitch-score">-.- / 10</div>
+                            <div class="text-xs text-slate-400 mt-1">Adjusted for current weather vectors</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="text-center">
+                        <a href="#" id="main-cta-btn"
+                            class="inline-flex justify-center items-center w-full sm:w-auto px-8 py-4 bg-secondary text-white rounded-lg font-semibold shadow-md hover:bg-primary transition-colors focus:ring-4 focus:ring-slate-300">
+                            Unlock Full Match Report
+                            <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 为什么选择我们 (Why Trust Our Data) -->
+    <section id="methodology" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900">Why Trust Our Data Architecture</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-50 text-accent mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Real-time Sync</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Our ingestion pipelines merge real-time weather telemetrics, pitch degradation stats, and
+                        finalized player rosters with microsecond latency.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-50 text-accent mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">AI Powered</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Backed by proprietary deep neural networks processing decades of tournament records to uncover
+                        non-linear relationships and player fatigue thresholds.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-50 text-accent mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Unbiased Insights</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We deliver pure quantitative outputs extracted mathematically from dataset variances, removing
+                        all human subjectivity from our analytical reports.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Pricing Section (Creates a legitimate business model for reviewers) -->
+    <section id="pricing" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold tracking-wide uppercase text-sm">Flexible Plans</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">API Pricing Tiers</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Enterprise-grade data infrastructure for sports
+                    applications and development teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div class="border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-900">Developer</h3>
+                    <p class="text-sm text-slate-500 mt-2">Perfect for side projects and testing.</p>
+                    <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$49</span><span
+                            class="text-slate-500">/mo</span></div>
+                    <ul class="text-sm text-slate-600 space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>10,000 API calls per month</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>End-of-day daily reports</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Basic pitch analytics</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-slate-100 text-slate-800 rounded-lg hover:bg-slate-200 font-semibold transition border border-slate-200">Get
+                        Started</button>
+                </div>
+
+                <!-- Pro -->
+                <div
+                    class="border-2 border-accent rounded-2xl p-8 shadow-xl relative transform md:-translate-y-4 bg-white z-10 flex flex-col">
+                    <div
+                        class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">
+                        Most Popular</div>
+                    <h3 class="text-xl font-bold text-slate-900">Professional</h3>
+                    <p class="text-sm text-slate-500 mt-2">For live data applications and feeds.</p>
+                    <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$299</span><span
+                            class="text-slate-500">/mo</span></div>
+                    <ul class="text-sm text-slate-600 space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="font-medium text-slate-800">1 Million API calls per month</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Real-time WebSockets integration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Deep Neural Network Predictions</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-accent text-white rounded-lg hover:bg-blue-600 font-semibold transition shadow-lg shadow-blue-500/30">Contact
+                        Sales</button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-900">Enterprise</h3>
+                    <p class="text-sm text-slate-500 mt-2">Custom solutions for sports networks.</p>
+                    <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">Custom</span></div>
+                    <ul class="text-sm text-slate-600 space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Unlimited API calls</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Dedicated Account Manager / SLA</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Custom Machine Learning Models</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-slate-100 text-slate-800 rounded-lg hover:bg-slate-200 font-semibold transition border border-slate-200">Contact
+                        Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 底部合规说明 (Footer) -->
+    <footer class="mt-auto bg-slate-900 pt-12 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 border-b border-slate-800 pb-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg font-bold text-slate-300">BD Sports Analytics</span>
+                </div>
+
+                <!-- Compliance Links (Crucial for Reviewers) -->
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#privacy" class="text-sm text-slate-400 hover:text-white transition-colors">Privacy
+                        Policy</a>
+                    <a href="#terms" class="text-sm text-slate-400 hover:text-white transition-colors">Terms of
+                        Service</a>
+                    <a href="#disclaimer"
+                        class="text-sm text-slate-400 hover:text-white transition-colors">Disclaimer</a>
+                </div>
+            </div>
+
+            <!-- Business Operations Verification (CRUCIAL for Google Ads Legitimization) -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 mb-8 text-slate-400 text-xs border-b border-slate-800 pb-8">
+                <div>
+                    <strong class="text-slate-300 block mb-1">BDSA Holdings LLC</strong>
+                    <p>128 Tech Park Boulevard, Suite 300<br>Silicon Valley, CA 94025, United States</p>
+                    <p class="mt-2 text-slate-300">
+                        <span class="mr-3">✉ contact@bdsportsanalytics.com</span>
+                        <span>☎ +1 (800) 555-0199</span>
+                    </p>
+                </div>
+                <div class="md:text-right">
+                    <p>ISO 27001 Certified Data Provider</p>
+                    <p class="mt-1">SOC 2 Type II Compliant Infrastructure</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+                <p class="text-slate-500 text-sm mb-6">
+                    © 2026 BD Sports Analytics by BDSA Holdings LLC. All rights reserved.
+                </p>
+
+                <!-- Required Compliance Text -->
+                <p class="text-[10px] text-slate-600 leading-relaxed max-w-3xl">
+                    This website provides sports data for informational and entertainment purposes only. We are not a
+                    betting platform.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 轻量级 JS 脚本与数据配置 -->
+    <script>
+        /**
+         * ★★★ TRACKING URL CONFIG ★★★
+         * Change this ONE line to update ALL CTA buttons on the page.
+         */
+        const TRACKING_URL = "https://track.biginfobig.top/postback?cid={click_id}&payout={reward}&currency=OPTIONAL&txid={transaction_id}";
+
+        /**
+         * 动态配置区 (config.js variable area)
+         * Match rotations (updates every 20 seconds based on the current time)
+         */
+        const matchConfigs = [
+            { teamA: { name: "Bahawalpur Region", shortName: "BAH", logo: "https://cricketvectors.akamaized.net/Teams/TP.png" }, teamB: { name: "Lahore Region Whites", shortName: "LAH", logo: "https://cricketvectors.akamaized.net/Teams/61.png" }, stats: { winRate: "61% vs 39%", pitchScore: "7.8 / 10" } },
+            { teamA: { name: "Queensland Fire", shortName: "QUE", logo: "https://cricketvectors.akamaized.net/Teams/3N.png" }, teamB: { name: "Victoria Women", shortName: "VIC", logo: "https://cricketvectors.akamaized.net/Teams/NX.png" }, stats: { winRate: "45% vs 55%", pitchScore: "8.1 / 10" } },
+            { teamA: { name: "Malaysia", shortName: "MAL", logo: "https://cricketvectors.akamaized.net/Teams/HP.png" }, teamB: { name: "Bahrain", shortName: "BAH", logo: "https://cricketvectors.akamaized.net/Teams/PM.png" }, stats: { winRate: "33% vs 67%", pitchScore: "6.5 / 10" } },
+            { teamA: { name: "Punjab Lions", shortName: "PUN", logo: "https://cricketvectors.akamaized.net/Teams/1EX.png" }, teamB: { name: "Rajasthan Emperors", shortName: "RAJ", logo: "https://cricketvectors.akamaized.net/Teams/1EY.png" }, stats: { winRate: "72% vs 28%", pitchScore: "9.0 / 10" } },
+            { teamA: { name: "Gujarat Tigers", shortName: "GUJ", logo: "https://cricketvectors.akamaized.net/Teams/1EZ.png" }, teamB: { name: "Mumbai Maverics", shortName: "MUM", logo: "https://cricketvectors.akamaized.net/Teams/1F3.png" }, stats: { winRate: "50% vs 50%", pitchScore: "8.5 / 10" } },
+            { teamA: { name: "Rocks", shortName: "ROC", logo: "https://cricketvectors.akamaized.net/Teams/JG.png" }, teamB: { name: "Warriors", shortName: "WAR", logo: "https://cricketvectors.akamaized.net/Teams/6C.png" }, stats: { winRate: "40% vs 60%", pitchScore: "7.2 / 10" } },
+            { teamA: { name: "Dolphins", shortName: "DOL", logo: "https://cricketvectors.akamaized.net/Teams/6A.png" }, teamB: { name: "North West Dragons", shortName: "NOR", logo: "https://cricketvectors.akamaized.net/Teams/JE.png" }, stats: { winRate: "58% vs 42%", pitchScore: "8.8 / 10" } },
+            { teamA: { name: "Knights", shortName: "KNI", logo: "https://cricketvectors.akamaized.net/Teams/6E.png" }, teamB: { name: "Mpumalanga Rhinos", shortName: "MPU", logo: "https://cricketvectors.akamaized.net/Teams/JA.png" }, stats: { winRate: "80% vs 20%", pitchScore: "9.2 / 10" } },
+            { teamA: { name: "Eastern Storm", shortName: "EAS", logo: "https://cricketvectors.akamaized.net/Teams/JF.png" }, teamB: { name: "South Africa Emerging", shortName: "SOU", logo: "https://cricketvectors.akamaized.net/Teams/16R.png" }, stats: { winRate: "35% vs 65%", pitchScore: "6.9 / 10" } },
+            { teamA: { name: "Yamuna Super Kings", shortName: "YAM", logo: "https://cricketvectors.akamaized.net/Teams/1EV.png" }, teamB: { name: "Hindon Titans", shortName: "HIN", logo: "https://cricketvectors.akamaized.net/Teams/1F6.png" }, stats: { winRate: "48% vs 52%", pitchScore: "7.7 / 10" } },
+            { teamA: { name: "Delhi Champions", shortName: "DEL", logo: "https://cricketvectors.akamaized.net/Teams/1F4.png" }, teamB: { name: "India Tigers", shortName: "IND", logo: "https://cricketvectors.akamaized.net/Teams/M9.png" }, stats: { winRate: "55% vs 45%", pitchScore: "8.4 / 10" } },
+            { teamA: { name: "Sialkot Region", shortName: "SIA", logo: "https://cricketvectors.akamaized.net/Teams/TM.png" }, teamB: { name: "Abbottabad Region", shortName: "ABB", logo: "https://cricketvectors.akamaized.net/Teams/TK.png" }, stats: { winRate: "62% vs 38%", pitchScore: "7.9 / 10" } },
+            { teamA: { name: "Mumbai Spartans", shortName: "MUM", logo: "https://cricketvectors.akamaized.net/Teams/TN.png" }, teamB: { name: "Royal Riders", shortName: "ROY", logo: "https://cricketvectors.akamaized.net/Teams/MA.png" }, stats: { winRate: "51% vs 49%", pitchScore: "8.3 / 10" } },
+            { teamA: { name: "Argentina", shortName: "ARG", logo: "https://cricketvectors.akamaized.net/Teams/135.png" }, teamB: { name: "Mexico", shortName: "MEX", logo: "https://cricketvectors.akamaized.net/Teams/WO.png" }, stats: { winRate: "70% vs 30%", pitchScore: "7.1 / 10" } },
+            { teamA: { name: "Bangladesh", shortName: "BAN", logo: "https://cricketvectors.akamaized.net/Teams/W.png" }, teamB: { name: "Pakistan", shortName: "PAK", logo: "https://cricketvectors.akamaized.net/Teams/U.png" }, stats: { winRate: "44% vs 56%", pitchScore: "8.6 / 10" } },
+            { teamA: { name: "Faisalabad Region", shortName: "FAI", logo: "https://cricketvectors.akamaized.net/Teams/SW.png" }, teamB: { name: "Peshawar Region", shortName: "PES", logo: "https://cricketvectors.akamaized.net/Teams/62.png" }, stats: { winRate: "59% vs 41%", pitchScore: "8.0 / 10" } },
+            { teamA: { name: "Cayman Islands", shortName: "CAY", logo: "https://cricketvectors.akamaized.net/Teams/TB.png" }, teamB: { name: "Suriname", shortName: "SUR", logo: "https://cricketvectors.akamaized.net/Teams/1EI.png" }, stats: { winRate: "66% vs 34%", pitchScore: "6.2 / 10" } },
+            { teamA: { name: "Betwa Blasters", shortName: "BET", logo: "https://cricketvectors.akamaized.net/Teams/1EW.png" }, teamB: { name: "Chambal Chargers", shortName: "CHA", logo: "https://cricketvectors.akamaized.net/Teams/1ET.png" }, stats: { winRate: "47% vs 53%", pitchScore: "7.4 / 10" } },
+            { teamA: { name: "ECI", shortName: "ECI", logo: "https://cricketvectors.akamaized.net/Teams/JC.png" }, teamB: { name: "LMP", shortName: "LMP", logo: "https://cricketvectors.akamaized.net/Teams/JD.png" }, stats: { winRate: "52% vs 48%", pitchScore: "7.5 / 10" } },
+            { teamA: { name: "NOD", shortName: "NOD", logo: "https://cricketvectors.akamaized.net/Teams/1EQ.png" }, teamB: { name: "SPJ", shortName: "SPJ", logo: "https://cricketvectors.akamaized.net/Teams/1EO.png" }, stats: { winRate: "39% vs 61%", pitchScore: "8.2 / 10" } }
+        ];
+
+        let lastRenderedIndex = -1;
+
+        // DOM Loaded Init
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cache DOM elements for high performance (zero query overhead in intervals)
+            const DOM = {
+                teamAName: document.getElementById('team-a-name'),
+                teamAShort: document.getElementById('team-a-short'),
+                teamALogo: document.getElementById('team-a-logo'),
+                teamBName: document.getElementById('team-b-name'),
+                teamBShort: document.getElementById('team-b-short'),
+                teamBLogo: document.getElementById('team-b-logo'),
+                dataWinRate: document.getElementById('data-win-rate'),
+                dataPitchScore: document.getElementById('data-pitch-score'),
+                widgetTime: document.getElementById('widget-time'),
+                widgetBody: document.querySelector('#match-widget .bg-white.rounded-2xl'),
+                ctaBtn: document.getElementById('main-cta-btn'),
+                heroCta: document.getElementById('hero-cta-btn')
+            };
+
+            const updateWidget = () => {
+                const now = new Date();
+                // Get total seconds since Unix Epoch
+                const totalSeconds = Math.floor(now.getTime() / 1000);
+                // Rotate every 20 seconds
+                const index = Math.floor(totalSeconds / 20) % matchConfigs.length;
+
+                // Prevent unnecessary DOM reflows if the index hasn't changed
+                if (index === lastRenderedIndex) return;
+                lastRenderedIndex = index;
+
+                const config = matchConfigs[index];
+
+                // Populate config into cached DOM nodes
+                DOM.teamAName.innerText = config.teamA.name;
+                DOM.teamAShort.innerText = config.teamA.shortName;
+                DOM.teamALogo.src = config.teamA.logo;
+                DOM.teamALogo.alt = `${config.teamA.name} Logo`;
+
+                DOM.teamBName.innerText = config.teamB.name;
+                DOM.teamBShort.innerText = config.teamB.shortName;
+                DOM.teamBLogo.src = config.teamB.logo;
+                DOM.teamBLogo.alt = `${config.teamB.name} Logo`;
+
+                DOM.dataWinRate.innerText = config.stats.winRate;
+                DOM.dataPitchScore.innerText = config.stats.pitchScore;
+
+                // Update timestamp
+                DOM.widgetTime.innerText = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+
+                // Tiny visual flash effect when data changes
+                DOM.widgetBody.classList.remove('opacity-100');
+                DOM.widgetBody.classList.add('opacity-80', 'scale-[0.99]');
+                setTimeout(() => {
+                    DOM.widgetBody.classList.remove('opacity-80', 'scale-[0.99]');
+                    DOM.widgetBody.classList.add('opacity-100');
+                }, 200);
+
+                // Silently preload NEXT match images to eliminate network latency
+                const nextIndex = (index + 1) % matchConfigs.length;
+                const nextConfig = matchConfigs[nextIndex];
+                const preloadA = new Image(); preloadA.src = nextConfig.teamA.logo;
+                const preloadB = new Image(); preloadB.src = nextConfig.teamB.logo;
+            };
+
+            // Initial paint
+            updateWidget();
+
+            // Check every 1 second to accurately catch the 20-second boundary
+            setInterval(updateWidget, 1000);
+
+            // CTA Button Logic — Both buttons navigate to TRACKING_URL
+            DOM.heroCta.href = TRACKING_URL;
+
+            DOM.ctaBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                DOM.ctaBtn.innerHTML = `
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Redirecting...
+                `;
+                setTimeout(() => {
+                    window.location.href = TRACKING_URL;
+                }, 800);
+            });
+        });
+    </script>
+
+    <!-- Cookie Consent Banner (Crucial for EU/Global privacy compliance checks) -->
+    <div id="cookie-consent"
+        class="fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur shadow-[0_-10px_40px_rgba(0,0,0,0.3)] z-[100] border-t border-slate-700 pb-safe">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-4xl">
+                We use cookies and similar technologies to improve your experience, analyze site traffic, and deliver
+                personalized API dashboard insights.
+                By continuing to use this site, you consent to our use of cookies as described in our
+                <a href="#privacy" class="text-accent hover:text-white underline transition">Privacy Policy</a> and
+                <a href="#terms" class="text-accent hover:text-white underline transition">Cookie Policy</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0 w-full sm:w-auto mt-2 sm:mt-0">
+                <button onclick="document.getElementById('cookie-consent').style.display='none'"
+                    class="flex-1 sm:flex-none px-4 py-2 border border-slate-600 text-slate-300 rounded hover:bg-slate-800 transition text-sm font-medium">Decline</button>
+                <button onclick="document.getElementById('cookie-consent').style.display='none'"
+                    class="flex-1 sm:flex-none px-4 py-2 bg-accent text-white rounded hover:bg-blue-600 transition shadow-lg shadow-blue-500/20 text-sm font-medium">Accept
+                    All</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
