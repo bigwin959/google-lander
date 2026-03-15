@@ -670,6 +670,20 @@
             // Check every 1 second to accurately catch the 20-second boundary
             setInterval(updateWidget, 1000);
 
+            // Fallback: if tracking script didn't rewrite the CTA links, ensure they still work
+            setTimeout(() => {
+                const heroCta = document.getElementById('hero-cta-btn');
+                const mainCta = document.getElementById('main-cta-btn');
+                [heroCta, mainCta].forEach(btn => {
+                    if (btn && btn.href && btn.href.startsWith('javascript:')) {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            window.location.href = TRACKING_URL;
+                        });
+                    }
+                });
+            }, 8000); // Wait 8s for tracking script to load, then add fallback
+
         });
     </script>
 
